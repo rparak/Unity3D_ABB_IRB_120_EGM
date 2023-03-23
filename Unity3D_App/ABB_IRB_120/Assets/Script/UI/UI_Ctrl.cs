@@ -25,7 +25,6 @@ File Name: UI_Ctrl.cs
 
 // System 
 using System;
-using System.Text;
 // Unity
 using UnityEngine;
 using Debug = UnityEngine.Debug;

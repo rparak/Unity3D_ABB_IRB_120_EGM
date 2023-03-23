@@ -29,8 +29,6 @@ using System.Threading;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Diagnostics;
 // Unity
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -119,12 +117,16 @@ public class Robot_Ctrl : MonoBehaviour
         {
             case 0:
                 {
+                    /*
+                     Description:
+                        Wait State {Disconnect State}
+                     */
+
                     GlobalVariables_Main_Control.Is_Connected = false;
                     GlobalVariables_Main_Control.Is_Disconnected = true;
 
                     ABB_EGM_Control.ready = false;
 
-                    // ------------------------ Wait State {Disconnect State} ------------------------//
                     if (GlobalVariables_Main_Control.Connect == true)
                     {
                         // Start Stream {ABB Externally Guided Motion - EGM}
@@ -137,10 +139,14 @@ public class Robot_Ctrl : MonoBehaviour
                 break;
             case 1:
                 {
+                    /*
+                     Description:
+                        Data Processing State {Connect State}
+                     */
+
                     GlobalVariables_Main_Control.Is_Connected = true;
                     GlobalVariables_Main_Control.Is_Disconnected = false;
 
-                    // ------------------------ Data Processing State {Connect State} ------------------------//
                     if (GlobalVariables_Main_Control.Disconnect == true)
                     {
                         // Stop threading block
@@ -164,8 +170,14 @@ public class Robot_Ctrl : MonoBehaviour
         {
             case 0:
                 {
+                    /*
+                     Description:
+                        Wait State {Disconnect State}
+                     */
+
                     target_id = 0;
 
+                    // Set the joint target data as real
                     GlobalVariables_Main_Control.J_Orientation_Target[0] = (float)ABB_EGM_Control.J_Orientation_Read[0];
                     GlobalVariables_Main_Control.J_Orientation_Target[1] = (float)ABB_EGM_Control.J_Orientation_Read[1];
                     GlobalVariables_Main_Control.J_Orientation_Target[2] = (float)ABB_EGM_Control.J_Orientation_Read[2];
@@ -181,13 +193,19 @@ public class Robot_Ctrl : MonoBehaviour
                 break;
 
             case 1:
-                { 
+                {
+                    /*
+                     Description:
+                        Setting the desired orientation
+                     */
+
                     if (ABB_EGM_Control.ready == false)
                     {
                         main_state_control_egm = 0;
                     }
                     else
                     {
+                        // Set the desired orientation that can be read from the trajectory {Trajectory = J_Orientation_Target[,]}.
                         GlobalVariables_Main_Control.J_Orientation_Target[0] = J_Orientation_Target[target_id, 0];
                         GlobalVariables_Main_Control.J_Orientation_Target[1] = J_Orientation_Target[target_id, 1];
                         GlobalVariables_Main_Control.J_Orientation_Target[2] = J_Orientation_Target[target_id, 2];
@@ -195,6 +213,7 @@ public class Robot_Ctrl : MonoBehaviour
                         GlobalVariables_Main_Control.J_Orientation_Target[4] = J_Orientation_Target[target_id, 4];
                         GlobalVariables_Main_Control.J_Orientation_Target[5] = J_Orientation_Target[target_id, 5];
 
+                        // Wait 100 ms as identification that the robot is in a moving state
                         System.Threading.Thread.Sleep(100);
                         main_state_control_egm = 2;
                     }
@@ -203,6 +222,11 @@ public class Robot_Ctrl : MonoBehaviour
 
             case 2:
                 {
+                    /*
+                     Description:
+                        Check if the robot is in position 
+                     */
+
                     bool in_pos_all = true;
                     foreach (bool J_Orient_In_Pos_i in GlobalVariables_Main_Control.J_Orientation_In_Pos)
                     {
@@ -222,6 +246,10 @@ public class Robot_Ctrl : MonoBehaviour
 
             case 3:
                 {
+                    /*
+                     Description:
+                        Check the trajectory length. If the desired orientation is in the final state, repeat the trajectory.
+                     */
 
                     if (J_Orientation_Target.GetLength(0) - 1 == target_id)
                     {

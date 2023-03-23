@@ -67,8 +67,6 @@ public class Joint_Ctrl : MonoBehaviour
             {
                 GlobalVariables_Main_Control.J_Orientation_In_Pos[index] = false;
             }
-
-
         }
         catch (Exception e)
         {
