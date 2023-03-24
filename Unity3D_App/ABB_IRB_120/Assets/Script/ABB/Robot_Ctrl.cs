@@ -71,7 +71,7 @@ public class Robot_Ctrl : MonoBehaviour
 
     // Control of the joints orientation
     //  Targets (n_targets x n_joints)
-    private float[,] J_Orientation_Target = new float[3, 6];
+    private float[,] J_Orientation_Target = new float[7, 6];
     //  Index of the target
     private int target_id = 0;
 
@@ -82,32 +82,59 @@ public class Robot_Ctrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Joint Space:
-        //  Speed [°/s]
-        GlobalVariables_Main_Control.J_Orientation_Smooth_time = 1.0f;
-
         // Initialization of targets
-        //  Index 0: 
+        //  Index 0: {MoveAbsJ [[0,0,0,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
         J_Orientation_Target[0, 0] = 0.0f;
         J_Orientation_Target[0, 1] = 0.0f;
         J_Orientation_Target[0, 2] = 0.0f;
         J_Orientation_Target[0, 3] = 0.0f;
-        J_Orientation_Target[0, 4] = 90.0f;
+        J_Orientation_Target[0, 4] = 0.0f;
         J_Orientation_Target[0, 5] = 0.0f;
-        // Index 1:
-        J_Orientation_Target[1, 0] = 20.0f;
-        J_Orientation_Target[1, 1] = -20.0f;
-        J_Orientation_Target[1, 2] = 20.0f;
-        J_Orientation_Target[1, 3] = -20.0f;
-        J_Orientation_Target[1, 4] = 20.0f;
-        J_Orientation_Target[1, 5] = -20.0f;
-        // Index 2:
+        // Index 1: {MoveAbsJ [[110,50,-20,-30,-75,50]],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
+        J_Orientation_Target[1, 0] = 110.0f;
+        J_Orientation_Target[1, 1] = 50.0f;
+        J_Orientation_Target[1, 2] = -20.0f;
+        J_Orientation_Target[1, 3] = -30.0f;
+        J_Orientation_Target[1, 4] = -75.0f;
+        J_Orientation_Target[1, 5] = 50.0f;
+        // Index 2: {MoveAbsJ [[0,-67,44,0,-67,0],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
         J_Orientation_Target[2, 0] = 0.0f;
-        J_Orientation_Target[2, 1] = 0.0f;
-        J_Orientation_Target[2, 2] = 0.0f;
+        J_Orientation_Target[2, 1] = -67.0f;
+        J_Orientation_Target[2, 2] = 44.0f;
         J_Orientation_Target[2, 3] = 0.0f;
-        J_Orientation_Target[2, 4] = 0.0f;
+        J_Orientation_Target[2, 4] = -67.0f;
         J_Orientation_Target[2, 5] = 0.0f;
+        // Index 3: {MoveAbsJ [[90,0,0,0,90,0]],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
+        J_Orientation_Target[3, 0] = 90.0f;
+        J_Orientation_Target[3, 1] = 0.0f;
+        J_Orientation_Target[3, 2] = 0.0f;
+        J_Orientation_Target[3, 3] = 0.0f;
+        J_Orientation_Target[3, 4] = 90.0f;
+        J_Orientation_Target[3, 5] = 0.0f;
+        // Index 4: {MoveAbsJ [[0,-90,0,90,90,-90],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
+        J_Orientation_Target[4, 0] = 0.0f;
+        J_Orientation_Target[4, 1] = -90.0f;
+        J_Orientation_Target[4, 2] = 0.0f;
+        J_Orientation_Target[4, 3] = 90.0f;
+        J_Orientation_Target[4, 4] = 90.0f;
+        J_Orientation_Target[4, 5] = -90.0f;
+        // Index 5: {MoveAbsJ [[0,40,50,90,90,90],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
+        J_Orientation_Target[5, 0] = 0.0f;
+        J_Orientation_Target[5, 1] = 40.0f;
+        J_Orientation_Target[5, 2] = 50.0f;
+        J_Orientation_Target[5, 3] = 90.0f;
+        J_Orientation_Target[5, 4] = 90.0f;
+        J_Orientation_Target[5, 5] = 90.0f;
+        // Index 6: {MoveAbsJ [[90,50,-50,0,0,0],[9E9,9E9,9E9,9E9,9E9,9E9]], ...}
+        J_Orientation_Target[6, 0] = 90.0f;
+        J_Orientation_Target[6, 1] = 50.0f;
+        J_Orientation_Target[6, 2] = -50.0f;
+        J_Orientation_Target[6, 3] = 0.0f;
+        J_Orientation_Target[6, 4] = 0.0f;
+        J_Orientation_Target[6, 5] = 0.0f;
+
+        // Set the approximate time required to reach the target
+        GlobalVariables_Main_Control.J_Orientation_Smooth_time = 2.0f;
     }
 
     // Update is called once per frame
