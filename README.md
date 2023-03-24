@@ -35,7 +35,7 @@ The project was realized at the Institute of Automation and Computer Science, Br
 
 **IP Address Settings:**
 
-|          | ABB RobotStudio (CRB 15000 GoFa) | PC |
+|          | ABB RobotStudio (ABB IRB 120) | PC |
 | :------: | :-----------: | :-----------: |
 | Simulation Control  | 127.0.0.1 | 127.0.0.1 |
 | Real - World Control | 192.168.125.1  | 192.168.125.22 |
