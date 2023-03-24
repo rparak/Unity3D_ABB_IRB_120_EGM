@@ -105,7 +105,9 @@ Description:
 
 ## Digital-Twin Application:
 
-....
+<p align="center">
+  <img src="https://github.com/rparak/Unity3D_ABB_IRB_120_EGM/blob/main/images/Unity3D_App_IRB120_1.png" width="800" height="500">
+</p>
 
 **Real-World Test:**
 
