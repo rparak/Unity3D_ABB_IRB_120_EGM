@@ -1,1 +1,1 @@
-# Unity3D_ABB_IRB_120_EGM
+# Unity3D Industrial Robotics: ABB IRB 120 EGM (Externally Guided Motion)
