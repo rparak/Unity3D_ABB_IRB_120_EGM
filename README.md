@@ -23,8 +23,6 @@ Universal Windows Platform, Android
 
 The project focuses on a simple demonstration of client-server communication via User Datagram Protocol (UDP), which is implemented in Unity3D. More precisely, it is the control of the robot by EGM (Externally Guided Motion). The main idea is to generate the motion of the absolute positions of the robot's joints through the Unity3D development platform. An additional feature of the project is to visualization of the robot's target position (with or without the end-effector).
 
-**WARNING: RobotWare version 6.15.01 or lower must be used.**
-
 The 3D parts of the robot were downloaded from the official ABB website here: [ABB Library](https://library.abb.com/)
 
 This solution can be used to control a real robot or to simulate one. The Unity3D Digital-Twin application has been tested on the ABB IRB 120 robotic arm, both on real hardware and in simulation.
