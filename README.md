@@ -114,8 +114,8 @@ Description:
 **Real-World Test:**
 
 <p align="center">
-  <img src="https://github.com/rparak/Unity3D_ABB_IRB_120_EGM/blob/main/images/RW_ABB_1.png" width="800" height="500">
-  <img src="https://github.com/rparak/Unity3D_ABB_IRB_120_EGM/blob/main/images/RW_ABB_2.png" width="800" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_IRB_120_EGM/blob/main/images/RW_ABB_1.png" width="750" height="500">
+  <img src="https://github.com/rparak/Unity3D_ABB_IRB_120_EGM/blob/main/images/RW_ABB_2.png" width="750" height="500">
 </p>
 
 ## Result:
