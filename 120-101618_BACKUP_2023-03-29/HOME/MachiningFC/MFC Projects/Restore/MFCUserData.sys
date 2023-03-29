@@ -1,0 +1,30 @@
+%%%
+  VERSION: 1
+  LANGUAGE: ENGLISH
+%%%
+
+MODULE MFCUserData(SYSMODULE)
+
+  TASK PERS tooldata mfcTool1 := [TRUE,[[0, 0, 130], [1, 0, 0, 0]],[10, [0, 0, 100],[1, 0, 0, 0], 1, 1, 1]];
+  TASK PERS tooldata mfcTool2 := [TRUE,[[0, 0, 0], [1, 0, 0, 0]],[0.001, [0, 0, 0.001],[1, 0, 0, 0], 0, 0, 0]];
+
+  TASK PERS loaddata mfcTool1_LD := [1.99854, [-1.22411, 0.65301, 43.0295],[1, 0, 0, 0], 0, 0, 0];
+  TASK PERS loaddata mfcTool2_LD := [0.001, [0, 0, 0.001],[1, 0, 0, 0], 0, 0, 0];
+
+  TASK PERS wobjdata mfcWobj1 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+  TASK PERS wobjdata mfcWobj2 := [FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
+
+  !____________________________________________________________________________________________________________
+  !
+  !The following two routines are leave for user to implement. They will be call in the exported modules
+  !____________________________________________________________________________________________________________
+  PROC SpindleOn()
+
+  ENDPROC
+
+  PROC SpindleOff()
+
+  ENDPROC
+
+
+ENDMODULE

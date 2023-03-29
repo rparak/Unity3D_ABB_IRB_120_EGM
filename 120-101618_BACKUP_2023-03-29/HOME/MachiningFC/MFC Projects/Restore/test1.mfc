@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MFCProjectFile Version="3.000">
+  <Information>
+    <MFCProjectName>test1</MFCProjectName>
+    <RapidProgramFileName>test1.pgf</RapidProgramFileName>
+    <PictureName />
+    <Description>test1</Description>
+    <Datetime>9/14/2016 7:55:43 AM</Datetime>
+  </Information>
+  <UserSettings>
+    <ProcessType>PressureProcess</ProcessType>
+    <NewTargetParameters>
+      <SpeedName>v50</SpeedName>
+      <ZoneName>z1</ZoneName>
+      <ForceMagn>10</ForceMagn>
+    </NewTargetParameters>
+    <LearningParameters>
+      <LearningSpeed>[10,500,5000,1000]</LearningSpeed>
+      <LearningForceMagn>10</LearningForceMagn>
+      <LearningForceDirection>Y_Positive</LearningForceDirection>
+      <PathAccuracy>0.2</PathAccuracy>
+      <MinDistance>1</MinDistance>
+      <MaxDistance>100</MaxDistance>
+    </LearningParameters>
+  </UserSettings>
+  <PathList />
+</MFCProjectFile>

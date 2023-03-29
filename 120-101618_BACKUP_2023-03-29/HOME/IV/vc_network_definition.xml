@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!-- vc_network_definition.xml
+
+     This XML-file makes it possible to connect to a camera from a
+     virtual controller. 
+	 
+	 This file is read at startup of the virtual controller. To take effect, 
+     the file must be named vc_network_definition.xml and placed in the 
+     HOME-directory of the virtual controller. 
+     From RobotWare release 6.05 a copy of the file is placed in the HOME/IV directory 
+     at startup of the virtual controller. The file could be placed in the HOME 
+     or in the HOME/IV directory. The HOME directory precedes the HOME/IV directory. 
+      
+ 	 Change the "SERVICE" IP address to the IP address of the PC network
+     adapter that is connected to the camera.
+    
+-->
+<VC_NETWORK_DEF>
+	<PORT name="SERVICE">
+		<IPaddress>127.0.0.1</IPaddress>
+		<SubnetMask>255.255.255.0</SubnetMask>
+	</PORT>
+</VC_NETWORK_DEF>

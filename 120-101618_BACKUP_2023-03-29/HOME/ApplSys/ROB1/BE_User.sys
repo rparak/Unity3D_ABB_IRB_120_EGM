@@ -1,0 +1,81 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE BE_User(SYSMODULE)
+  !
+  ! 2007-07-01 S?
+  !   CHG: Added data for tcp check freq. from BE_Mnu.
+  ! 2006-01-17 S?
+  !   CHG: Added data scanMig and tdMig for use in setup.
+  !   CHG: Renamed procedures due to name conflicts with bullseye.
+  ! 2006-01-13 S?
+  !   CHG: Changed name to BE_User due to restore problem with BullsEye, name conflict
+  !
+  TASK PERS tooldata tWeldGun:=[TRUE,[[0,0,0],[1,0,0,0]],[1,[1,0,0],[1,0,0,0],0,0,0]];
+  !
+  LOCAL CONST jointtarget jtEmpty :=[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+  TASK PERS jointtarget jtBEApprPos :=[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+  TASK PERS jointtarget jtBEStartPos:=[[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+  !
+  CONST be_device devUp  :=["sen1",TRUE,[6,45,100,100],[40,45,100,100],0.10,FALSE,TRUE,TRUE];
+  CONST be_device devDown:=["sen1",TRUE,[6,45,100,100],[40,45,100,100],0.10,TRUE,TRUE,TRUE];
+  CONST be_scan scanMig:=[2,8,8,45,35,25];
+  CONST be_tooldesign tdMig:=[TRUE,30,18,50,6,6,TRUE,TRUE,1.2,[150,120,100,100],[250,150,100,100]];
+  !
+  TASK PERS num nTcpExtension:=15;
+  ! vars for tcp check during production
+  TASK PERS num nBECheckTcpFreq:=0;
+  TASK PERS num nBECheckCycle:=0;
+  !
+  PROC BEToolSetup()
+    VAR jointtarget jCurrPos;
+    VAR string sHeader;
+    VAR string sMsg{5};
+    VAR btnres nAnswer;
+
+    sHeader:="BullsEye"+" ("+GetTaskName()+")";
+    sMsg{1}:="Press Yes to run setup for BullsEye scanning process.";
+    sMsg{2}:="";
+    sMsg{3}:="Press No to cancel.";
+    sMsg{4}:="";
+    sMsg{5}:="";
+    UIMsgBox \Header:=sHeader,sMsg{1}\MsgLine2:=sMsg{2}\MsgLine3:=sMsg{3}\MsgLine4:=sMsg{4}\MsgLine5:=sMsg{5}\Buttons:=btnYesNo\Icon:=iconInfo\Result:=nAnswer;
+    IF (nAnswer=resYes) THEN
+      !The length of the TCP extension, as measured from the end of the tool body, is defined
+      !here in millimeters.
+      sHeader:="BullsEye"+" ("+GetTaskName()+")";
+      sMsg{1}:="TCP extension";
+      sMsg{2}:="The length of the TCP extension, measured from the end of the tool body in mm.";
+      sMsg{3}:="";
+      sMsg{4}:="Current value: "+ValToStr(nTcpExtension);
+      sMsg{5}:="Enter TCP extension (mm)";
+      nTcpExtension:=UINumEntry(\Header:=sHeader\MsgArray:=sMsg\Icon:=iconInfo\InitValue:=nTcpExtension);
+
+      sHeader:="BullsEye"+" ("+GetTaskName()+")";
+      sMsg{1}:="Tool and positions";
+      sMsg{2}:="";
+      sMsg{3}:="Press Ok to modpos approach position, start position";
+      sMsg{4}:="and select tool for BullsEye scanning process.";
+      sMsg{5}:="";
+      UIMsgBox \Header:=sHeader,sMsg{1}\MsgLine2:=sMsg{2}\MsgLine3:=sMsg{3}\MsgLine4:=sMsg{4}\MsgLine5:=sMsg{5}\Buttons:=btnOk\Icon:=iconInfo\Result:=nAnswer;
+
+      Stop\NoRegain;
+      ! modpos robtargets jtBEApprPos and jtBEStartPos
+      BESetupToolJ jtBEApprPos,jtBEStartPos,nTcpExtension,tdMig,scanMig,devUp,v100,fine,tWeldGun;
+    ENDIF
+  ENDPROC
+
+  PROC BEToolCheck()
+    BECheckTcp tWeldGun\XYZOnly\SingleScan;
+  ENDPROC
+
+  PROC BEToolUpdate()
+    BEUpdateTcp tWeldGun\XYZOnly;
+  ENDPROC
+
+  PROC BERefPnt()
+    BERefPointer tWeldGun;
+  ENDPROC
+ENDMODULE

@@ -1,0 +1,52 @@
+#
+# Generated backup file, do not edit.
+#
+# Originally at: /hd0a/TEMP/backup.880332
+# 2023-03-29  09:28:13
+#
+>>SYSTEM_ID:
+120-101618
+
+>>PRODUCTS_ID:
+RobotWare Version: 6.14.01.00
+
+  UDPUC Driver
+  English
+  687-1 Advanced Robot Motion
+  613-1 Collision Detection
+  709-1 DeviceNet Master/Slave
+  689-1 Externally Guided Motion (EGM)
+  617-1 FlexPendant Interface
+  614-1 FTP SFTP and NFS client
+  610-1 Independent Axis
+  623-1 Multitasking
+  612-1 Path Offset
+  611-1 Path Recovery
+  616-1 PC Interface
+  888-3 PROFINET Device
+  628-1 Sensor Interface
+  885-1 SoftMove
+  608-1 World Zones
+  RobotWare Base
+  Axis Calibration
+  Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID
+  IRB 120-3/0.6
+
+>>HOME:
+All public files and directories
+
+>>SYSPAR:
+SYS.cfg
+PROC.cfg
+MMC.cfg
+EIO.cfg
+SIO.cfg
+MOC.cfg
+
+
+>>TASK1: (T_ROB1,,)
+SYSMOD/user.sys @ 
+PROGMOD/Module1.mod @ 
+
+
+>>EOF:

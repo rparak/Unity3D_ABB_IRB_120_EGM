@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.34.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x010C" DeviceID="0x0007">
+			<InfoText TextId="T_ID_DEV_DESCRIPTION"/>
+			<VendorName Value="ABB Robotics"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="General" ProductFamily="Anybus"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+
+			<!-- ============================================================================================ -->
+			<!--   List of Device Access Points (DAP)                 									                      -->
+			<!-- ============================================================================================ -->
+			<DeviceAccessPointList>
+
+				<DeviceAccessPointItem ID="DAP V2.0" PhysicalSlots="0..64" ModuleIdentNumber="0x00000011" MinDeviceInterval="64" ImplementationType="NP30" DNS_CompatibleName="PNET-Anybus" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.0" DeviceAccessSupported="true" NumberOfDeviceAccessAR="1" PNIO_Version="V2.0" CheckDeviceID_Allowed="true" NameOfStationNotTransferable="false">
+					<!-- TBD: Set NameOfStationNotTransferable -->
+					<!-- TBD: Set CheckDeviceID_Allowed -->
+					<!-- TBD: Set PNIO_Version to the PROFINET IO version that this device is based on -->
+					<!-- TBD: Set DeviceAccessSupported -->
+					<ModuleInfo>
+						<Name TextId="T_ID_DAP_V2"/>
+						<InfoText TextId="T_ID_V2_DEV_DESCRIPTION"/>
+						<VendorName Value="ABB Robotics"/>
+						<OrderNumber Value="ABCC-PRT"/>
+						<HardwareRelease Value="V1.00"/>
+						<SoftwareRelease Value="V1.12"/>
+					</ModuleInfo>
+
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE"/>
+						<SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1"/>
+					</SubslotList>
+
+					<IOConfigData MaxInputLength="256" MaxOutputLength="256"/>
+
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT1B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT2B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT4B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT8B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT16B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT32B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT64B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_OUTPUT128B" AllowedInSlots="2"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT1B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT2B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT4B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT8B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT16B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT32B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT64B" AllowedInSlots="1"/>
+						<ModuleItemRef ModuleItemTarget="ID_MODULE_INPUT128B" AllowedInSlots="1"/>
+					</UseableModules>
+
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP V2.0" SubmoduleIdentNumber="0x00000000" MayIssueProcessAlarm="true">
+							<IOData/>
+							<ModuleInfo>
+								<Name TextId="IDT_T_ID_DAP_V2Sub"/>
+								<InfoText TextId="IDT_T_ID_V2_DEV_DESCRIPTIONSub"/>
+								<VendorName Value="ABB Robotics"/>
+								<OrderNumber Value="ABCC-PRT"/>
+								<HardwareRelease Value="V1.00"/>
+								<SoftwareRelease Value="V1.12"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_V2.0I" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" SupportedRT_Class="Class1" TextId="T_ID_DAP_INTERFACE_MODULE" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP">
+							<ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_V2.0P" SubslotNumber="32769" SubmoduleIdentNumber="0x0002" MAUType="100BASETXFD" TextId="T_ID_PORT">
+							<MAUTypeList>
+								<MAUTypeItem Value="16"/>
+							</MAUTypeList>
+						</PortSubmoduleItem>
+					</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="1"/>
+					</Graphics>
+				</DeviceAccessPointItem>
+
+			</DeviceAccessPointList>
+
+			<!-- List of modules -->
+
+			<ModuleList>
+
+				<!--* Output 1 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT1B" ModuleIdentNumber="0x00000002">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT1B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT1B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT1B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT1B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT1B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 2 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT2B" ModuleIdentNumber="0x00000003">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT2B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT2B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT2B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT2B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT2B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 4 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT4B" ModuleIdentNumber="0x00000004">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT4B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT4B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT4B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT4B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT4B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 8 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT8B" ModuleIdentNumber="0x00000005">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT8B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT8B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT8B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT8B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT8B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 16 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT16B" ModuleIdentNumber="0x00000006">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT16B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT16B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT16B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT16B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT16B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 32 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT32B" ModuleIdentNumber="0x00000007">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT32B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT32B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT32B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT32B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT32B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 64 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT64B" ModuleIdentNumber="0x00000008">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT64B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT64B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT64B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT64B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT64B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Output 128 byte *-->
+				<ModuleItem ID="ID_MODULE_OUTPUT128B" ModuleIdentNumber="0x00000009">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_OUTPUT128B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_OUTPUT128B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_OUTPUT128B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_OUTPUT"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_OUTPUT128B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_OUTPUT128B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 1 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT1B" ModuleIdentNumber="0x00000020">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT1B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT1B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT1B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned8" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT1B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT1B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 2 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT2B" ModuleIdentNumber="0x00000030">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT2B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT2B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT2B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned16" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT2B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT2B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 4 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT4B" ModuleIdentNumber="0x00000040">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT4B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT4B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT4B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT4B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT4B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 8 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT8B" ModuleIdentNumber="0x00000050">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT8B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT8B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT8B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT8B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT8B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 16 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT16B" ModuleIdentNumber="0x00000060">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT16B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT16B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT16B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT16B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT16B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 32 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT32B" ModuleIdentNumber="0x00000070">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT32B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT32B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT32B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT32B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT32B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 64 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT64B" ModuleIdentNumber="0x00000080">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT64B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT64B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT64B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT64B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT64B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--* Input 128 byte *-->
+				<ModuleItem ID="ID_MODULE_INPUT128B" ModuleIdentNumber="0x00000090">
+					<ModuleInfo CategoryRef="CAT_REF_MODULES">
+						<Name TextId="T_ID_MODULE_NAME_INPUT128B"/>
+						<InfoText TextId="T_ID_INFO_TEXT_INPUT128B"/>
+						<OrderNumber Value=""/>
+						<HardwareRelease Value="V1.0"/>
+						<SoftwareRelease Value="V1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="ID_SUBMOD_INPUT128B" SubmoduleIdentNumber="0x00000000" FixedInSubslots="1" MayIssueProcessAlarm="true">
+							<IOData>
+								<Input Consistency="All items consistency">
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+									<DataItem DataType="Unsigned32" TextId="T_ID_INPUT"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_ID_SUBMOD_NAME_INPUT128B"/>
+								<InfoText TextId="T_ID_SUBMOD_INFO_INPUT128B"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+			</ModuleList>
+
+			<!-- List of values -->
+
+			<!-- BMP graphics -->
+			<GraphicsList>
+				<GraphicItem ID="1" GraphicFile="DSQC688"/>
+			</GraphicsList>
+
+			<!-- List of categorys -->
+			<CategoryList>
+				<CategoryItem ID="CAT_REF_MODULES" TextId="T_ID_CAT_REF_MODULES"/>
+			</CategoryList>
+
+			<!-- List of texts -->
+			<ExternalTextList>
+				<PrimaryLanguage>
+					<!--Device Access Point information etc -->
+					<Text TextId="T_ID_DEV_DESCRIPTION" Value="PROFINET Anybus"/>
+
+					<Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="This Device Access Point supports RT communication"/>
+
+					<Text TextId="T_ID_DAP_V2" Value="DSQC688"/>
+					<Text TextId="T_ID_SS_INTERFACE" Value="X1"/>
+					<Text TextId="T_ID_SS_PORT1" Value="P1"/>
+					<Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface"/>
+					<Text TextId="T_ID_PORT" Value="Port 1"/>
+
+					<!--Module category-->
+					<Text TextId="T_ID_CAT_REF_MODULES" Value="DI/DO"/>
+
+					<!-- Vendor module texts -->
+					<Text TextId="T_ID_INPUT" Value="Input"/>
+					<Text TextId="T_ID_OUTPUT" Value="Output"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT1B" Value="Output 1 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT1B" Value="Output 1 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT1B" Value="Output 1 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT1B" Value="Output 1 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT2B" Value="Output 2 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT2B" Value="Output 2 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT2B" Value="Output 2 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT2B" Value="Output 2 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT4B" Value="Output 4 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT4B" Value="Output 4 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT4B" Value="Output 4 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT4B" Value="Output 4 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT8B" Value="Output 8 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT8B" Value="Output 8 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT8B" Value="Output 8 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT8B" Value="Output 8 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT16B" Value="Output 16 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT16B" Value="Output 16 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT16B" Value="Output 16 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT16B" Value="Output 16 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT32B" Value="Output 32 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT32B" Value="Output 32 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT32B" Value="Output 32 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT32B" Value="Output 32 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT64B" Value="Output 64 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT64B" Value="Output 64 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT64B" Value="Output 64 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT64B" Value="Output 64 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_OUTPUT128B" Value="Output 128 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_OUTPUT128B" Value="Output 128 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_OUTPUT128B" Value="Output 128 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_OUTPUT128B" Value="Output 128 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT1B" Value="Input 1 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT1B" Value="Input 1 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT1B" Value="Input 1 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT1B" Value="Input 1 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT2B" Value="Input 2 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT2B" Value="Input 2 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT2B" Value="Input 2 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT2B" Value="Input 2 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT4B" Value="Input 4 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT4B" Value="Input 4 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT4B" Value="Input 4 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT4B" Value="Input 4 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT8B" Value="Input 8 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT8B" Value="Input 8 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT8B" Value="Input 8 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT8B" Value="Input 8 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT16B" Value="Input 16 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT16B" Value="Input 16 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT16B" Value="Input 16 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT16B" Value="Input 16 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT32B" Value="Input 32 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT32B" Value="Input 32 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT32B" Value="Input 32 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT32B" Value="Input 32 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT64B" Value="Input 64 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT64B" Value="Input 64 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT64B" Value="Input 64 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT64B" Value="Input 64 byte"/>
+
+					<Text TextId="T_ID_MODULE_NAME_INPUT128B" Value="Input 128 byte"/>
+					<Text TextId="T_ID_INFO_TEXT_INPUT128B" Value="Input 128 byte"/>
+					<Text TextId="T_ID_SUBMOD_NAME_INPUT128B" Value="Input 128 byte"/>
+					<Text TextId="T_ID_SUBMOD_INFO_INPUT128B" Value="Input 128 byte"/>
+
+					<Text TextId="IDT_T_ID_DAP_V2Sub" Value="PROFINET Anybus"/>
+					<Text TextId="IDT_T_ID_V2_DEV_DESCRIPTIONSub" Value="A PROFINET Anybus module for IRC5 Robot controller"/>
+				</PrimaryLanguage>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>

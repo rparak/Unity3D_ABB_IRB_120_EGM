@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductSettings version="1.0">
+  <Products>
+    <Product name="RobotWare" version="6.14.1017" id="abb.robotics.robotware">
+      <Settings>
+        <Setting id="abb.robotics.robotware.options.udpuc" displayName="UDPUC Driver" robot="1" />
+        <Setting id="abb.robotics.robotware.languages.english" displayName="English" robot="1" path="\English\Default Language\System Options\" />
+        <Setting id="abb.robotics.robotware.options.advancedrobotmotion" displayName="687-1 Advanced Robot Motion" robot="1" path="\687-1 Advanced Robot Motion\Motion Performance\System Options\" />
+        <Setting id="abb.robotics.robotware.options.collisiondetection" displayName="613-1 Collision Detection" robot="1" path="\613-1 Collision Detection\Motion Supervision\System Options\" />
+        <Setting id="abb.robotics.robotware.options.devicenet.mssingle" displayName="709-1 DeviceNet Master/Slave" robot="1" path="\709-1 DeviceNet Master/Slave\Industrial Networks\System Options\" />
+        <Setting id="abb.robotics.robotware.options.externallyguidedmotion" displayName="689-1 Externally Guided Motion (EGM)" robot="1" path="\689-1 Externally Guided Motion (EGM)\Engineering Tools\System Options\" />
+        <Setting id="abb.robotics.robotware.options.flexpendantinterface" displayName="617-1 FlexPendant Interface" robot="1" path="\617-1 FlexPendant Interface\Communication\System Options\" />
+        <Setting id="abb.robotics.robotware.options.ftpnfsclient" displayName="614-1 FTP SFTP and NFS client" robot="1" path="\614-1 FTP SFTP and NFS client\Communication\System Options\" />
+        <Setting id="abb.robotics.robotware.options.independentaxis" displayName="610-1 Independent Axis" robot="1" path="\610-1 Independent Axis\Motion Functions\System Options\" />
+        <Setting id="abb.robotics.robotware.options.multitasking" displayName="623-1 Multitasking" robot="1" path="\623-1 Multitasking\Engineering Tools\System Options\" />
+        <Setting id="abb.robotics.robotware.options.pathoffset" displayName="612-1 Path Offset" robot="1" path="\612-1 Path Offset\Motion Functions\System Options\" />
+        <Setting id="abb.robotics.robotware.options.pathrecovery" displayName="611-1 Path Recovery" robot="1" path="\611-1 Path Recovery\Motion Functions\System Options\" />
+        <Setting id="abb.robotics.robotware.options.pcinterface" displayName="616-1 PC Interface" robot="1" path="\616-1 PC Interface\Communication\System Options\" />
+        <Setting id="abb.robotics.robotware.options.profinet.slave" displayName="888-3 PROFINET Device" robot="1" path="\888-3 PROFINET Device\Industrial Networks\System Options\" />
+        <Setting id="abb.robotics.robotware.options.sensorinterface" displayName="628-1 Sensor Interface" robot="1" path="\628-1 Sensor Interface\Engineering Tools\System Options\" />
+        <Setting id="abb.robotics.robotware.options.softmove" displayName="885-1 SoftMove" robot="1" path="\885-1 SoftMove\Motion Functions\System Options\" />
+        <Setting id="abb.robotics.robotware.options.worldzones" displayName="608-1 World Zones" robot="1" path="\608-1 World Zones\Motion Events\System Options\" />
+        <Setting id="abb.robotics.robotware.base" displayName="RobotWare Base" robot="1" path="\RobotWare Base\System Options\" />
+        <Setting id="abb.robotics.robotware.options.calaxis" displayName="Axis Calibration" robot="1" />
+        <Setting id="abb.robotics.robotware.drivesystems.drive.dc430a2.du430a2.dm430a" displayName="Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID" robot="1" path="\Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID\Drive System\Drive Module\" />
+        <Setting id="abb.robotics.robotware.robots.irb120.3-0_58" displayName="IRB 120-3/0.6" robot="1" path="\IRB 120-3/0.6\IRB 120\Robot\Robots\" />
+      </Settings>
+    </Product>
+  </Products>
+</ProductSettings>

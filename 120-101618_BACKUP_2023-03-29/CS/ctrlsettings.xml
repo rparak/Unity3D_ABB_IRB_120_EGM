@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ControllerSettings version="1.0">
+  <DateTime timeZone="" timeServer="">
+    <!--The value of timeServer should be timeserver's URL/IP address-->
+    <!--The value of timeZone must match text in column TZ in file zone.tab under RobotWareXXX/system/timezone-->
+  </DateTime>
+  <WAN type="NONE" ip="" subnetMask="" defaultGateway="">
+    <!--WAN type can be FIXED, DHCP or NONE-->
+  </WAN>
+  <ControllerInfo name="120-101618" id="120-101618" type="1"/>
+  <UASSettings>
+    <!--The following files are included in UAS settings-->
+    <!--<File name="uas_users.xml"/>-->
+    <!--<File name="uas_groups.xml"/>-->
+    <!--<File name="uas_groups_template.xml"/>-->
+  </UASSettings>
+</ControllerSettings>

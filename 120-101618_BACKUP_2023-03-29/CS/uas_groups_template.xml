@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--****************************************************
+* 
+* uas_groups_template.xml  - User Authorization Groups and Grants Definition Template
+*
+* $Revision: 1.9 $
+*
+* DESCRIPTION:
+*   This template file contains an example of the XML values for the 
+*   User Authorization System (UAS) Groups and Grants. This template 
+*   and can be used by the tools to configure the groups and grants 
+*   for the controller. A groups and grants description contains a list 
+*   of groups, where each group has a unique name and a list of grants 
+*   belonging to the group.  The group may  also contain application grants 
+*   with key, value pairs. 	    
+*
+* Copyright (c) ABB 2004 All rights reserved
+*
+*-->
+<UAS_Groups xmlns="urn:abb-robotics-uas-groups" uas_version="6" readonly="false">
+	<GroupList>
+		<Group name="Administrator">
+			<Grant>UAS_FULL_ACCESS</Grant>
+		</Group>
+		<Group name="Programmer">
+			<Grant>UAS_FTP_READ</Grant>
+			<Grant>UAS_FTP_WRITE</Grant>
+			<Grant>UAS_REMOTE_WARMSTART</Grant>
+			<Grant>UAS_BACKUP</Grant>
+			<Grant>UAS_RESTORE</Grant>
+			<Grant>UAS_CFG_WRITE</Grant>
+			<Grant>UAS_RAPID_EDIT</Grant>
+			<Grant>UAS_RAPID_LOADPROGRAM</Grant>
+			<Grant>UAS_RAPID_MODPOS</Grant>
+			<Grant>UAS_RAPID_EXECUTE</Grant>
+			<Grant>UAS_RAPID_DEBUG</Grant>
+      <Grant>UAS_RAPID_CURRVALUE</Grant>
+      <Grant>UAS_IO_WRITE</Grant>
+			<Grant>UAS_CALIBRATE</Grant>
+      <Grant>UAS_REVOLUTION_COUNTER_UPDATE</Grant>
+      <Grant>UAS_SPEED_DECREASE</Grant>
+		</Group>
+		<Group name="Service">
+			<Grant>UAS_FTP_READ</Grant>
+			<Grant>UAS_FTP_WRITE</Grant>
+			<Grant>UAS_CONTROLLER_PROPERTIES_WRITE</Grant>
+			<Grant>UAS_REMOTE_WARMSTART</Grant>
+			<Grant>UAS_SYSTEM_ADMINISTRATION</Grant>
+			<Grant>UAS_BACKUP</Grant>
+			<Grant>UAS_RESTORE</Grant>
+			<Grant>UAS_CFG_WRITE</Grant>
+			<Grant>UAS_RAPID_MODPOS</Grant>
+			<Grant>UAS_RAPID_EXECUTE</Grant>
+			<Grant>UAS_RAPID_DEBUG</Grant>
+      <Grant>UAS_RAPID_CURRVALUE</Grant>
+      <Grant>UAS_IO_WRITE</Grant>
+			<Grant>UAS_CALIBRATE</Grant>
+      <Grant>UAS_REVOLUTION_COUNTER_UPDATE</Grant>
+      <Grant>UAS_SPEED_DECREASE</Grant>
+		</Group>	
+		<Group name="Operator">
+			<Grant>UAS_BACKUP</Grant>
+			<Grant>UAS_RAPID_MODPOS</Grant>
+			<Grant>UAS_RAPID_EXECUTE</Grant>
+      <Grant>UAS_RAPID_CURRVALUE</Grant>
+      <Grant>UAS_REVOLUTION_COUNTER_UPDATE</Grant>
+      <Grant>UAS_IO_WRITE</Grant>
+		</Group>
+		<Group name="Default Group">
+			<Grant>UAS_RAPID_EXECUTE</Grant>
+		</Group>
+	</GroupList>
+</UAS_Groups>

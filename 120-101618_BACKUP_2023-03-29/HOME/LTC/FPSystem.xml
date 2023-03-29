@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Comments: Settings for the FlexPendant.-->
+<FP>
+  <USER name="">
+    <DATA id="AdditionalTestView">
+      <PROP name="TestView" value="ABB.Robotics.Processes.Gap.TpsViewGapUI,ABB.Robotics.Processes.LTC.LTCStartView,ABB.Robotics.ProductionScreen.ProductionScreen" />
+    </DATA>
+  </USER>
+</FP>

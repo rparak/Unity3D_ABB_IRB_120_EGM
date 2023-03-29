@@ -1,0 +1,26 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE CurrJointT
+VAR iodev outfile;
+VAR jointtarget joints;
+  PROC tuneproc()
+    TmOpen "HOME:" \File:= "/TEMP/tune.out", outfile\Write;
+    joints:=CJointT();
+    TmWrite outfile,"rax_1="+ValToStr(joints.robax.rax_1);
+    TmWrite outfile,"rax_2="+ValToStr(joints.robax.rax_2);
+    TmWrite outfile,"rax_3="+ValToStr(joints.robax.rax_3);
+    TmWrite outfile,"rax_4="+ValToStr(joints.robax.rax_4);
+    TmWrite outfile,"rax_5="+ValToStr(joints.robax.rax_5);
+    TmWrite outfile,"rax_6="+ValToStr(joints.robax.rax_6);
+    TmWrite outfile,"eax_a="+ValToStr(joints.extax.eax_a);
+    TmWrite outfile,"eax_b="+ValToStr(joints.extax.eax_b);
+    TmWrite outfile,"eax_c="+ValToStr(joints.extax.eax_c);
+    TmWrite outfile,"eax_d="+ValToStr(joints.extax.eax_d);
+    TmWrite outfile,"eax_e="+ValToStr(joints.extax.eax_e);
+    TmWrite outfile,"eax_f="+ValToStr(joints.extax.eax_f);
+    TmClose outfile;
+  ENDPROC
+ENDMODULE

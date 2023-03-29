@@ -1,0 +1,55 @@
+%%%
+  VERSION:1
+  LANGUAGE:ENGLISH
+%%%
+
+MODULE LTAPP__variables(SYSMODULE,READONLY)
+	
+	!  Copyright (c) 2002-2010 ABB AB
+
+	! IMPORTANT:
+	! ----------
+	! The actually implemented functionality in the different sensors is sensor provider specific!
+	!
+	! access: R = read, W = write
+	
+									  ! access   description
+									  ! ______   _______________________________________________________________________________________________________
+    CONST num LTAPP__VERSION   :=  1; !   R	     Some value that identifies the version of the Sensor software.
+    CONST num LTAPP__RESET     :=  3; !    W     Reset the sensor to the initial state, whatever state it is in currently.
+    CONST num LTAPP__PING      :=  4; !    W     Sensor returns a response indicating its status.
+    CONST num LTAPP__CAMCHECK  :=  5; !    W     Start Camcheck of the sensor. If this cannot be done within the time limit specified in the link protocol a 'not ready yet' status will be returned.
+    CONST num LTAPP__POWER_UP  :=  6; !   RW     Power up(=1)/down(=0) the sensor and initialize the filters. (Power up can take several seconds!)
+    CONST num LTAPP__LASER_OFF :=  7; !   RW     Switch off(=1)/on(=0) the laser beam and measuring.
+    CONST num LTAPP__X         :=  8; !   R      Measured X value, unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Y         :=  9; !   R      Measured Y value, unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Z         := 10; !   R      Measured Z value, unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__GAP       := 11; !   R      The gap between two sheets of metal, units are determined by the variable Unit, -32768 if not valid.
+    CONST num LTAPP__MISMATCH  := 12; !   R      Mismatch, unsigned word, units are determined by the variable Unit. -32768 if not valid.
+    CONST num LTAPP__AREA      := 13; !   R      Seam area, units in mm2, -32768 if not valid.
+    CONST num LTAPP__THICKNESS := 14; !   RW     Plate thickness of sheet the sensor shall look for, LSB=0.1mm.
+    CONST num LTAPP__STEPDIR   := 15; !   RW     Stepdirection of the joint: Step on left=1 or right=0 side of pathdirection.
+    CONST num LTAPP__JOINT_NO  := 16; !   RW     Set/get active joint number.
+    CONST num LTAPP__AGE       := 17; !   R      Time since profile acquisition (ms), unsigned word.
+    CONST num LTAPP__ANGLE     := 18; !   R      Angle of the normal to the joint relative sensor coord. system Z direction - in 0.1 degrees.
+    CONST num LTAPP__UNIT      := 19; !   RW     Units of X, Y, Z, Gap and Mismatch. 0= 0.1 mm, 1= 0.01 mm.
+	! internally reserved         20
+    CONST num LTAPP__APM_P1    := 31; !   R      ServoRobot only! Adaptive parameter 1
+    CONST num LTAPP__APM_P2    := 32; !   R      ServoRobot only! Adaptive parameter 2
+    CONST num LTAPP__APM_P3    := 33; !   R      ServoRobot only! Adaptive parameter 3
+    CONST num LTAPP__APM_P4    := 34; !   R      ServoRobot only! Adaptive parameter 4
+    CONST num LTAPP__APM_P5    := 35; !   R      ServoRobot only! Adaptive parameter 5
+    CONST num LTAPP__APM_P6    := 36; !   R      ServoRobot only! Adaptive parameter 6
+    CONST num LTAPP__ROT_Y     := 51; !   R      Measured angle around sensor Y axis
+    CONST num LTAPP__ROT_Z     := 52; !   R	     Measured angle around sensor Z axis
+    CONST num LTAPP__X0        := 54; !   R      SCANSONIC: Measured X0 value (laser line 1), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Y0        := 55; !   R      SCANSONIC: Measured Y0 value (laser line 1), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Z0        := 56; !   R      SCANSONIC: Measured Z0 value (laser line 1), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__X1        := 57; !   R      SCANSONIC: Measured X1 value (laser line 2), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Y1        := 58; !   R      SCANSONIC: Measured Y1 value (laser line 2), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Z1        := 59; !   R      SCANSONIC: Measured Z1 value (laser line 2), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__X2        := 60; !   R      SCANSONIC: Measured X2 value (laser line 3), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Y2        := 61; !   R      SCANSONIC: Measured Y2 value (laser line 3), unsigned word, units are determined by the variable Unit.
+    CONST num LTAPP__Z2        := 62; !   R      SCANSONIC: Measured Z2 value (laser line 3), unsigned word, units are determined by the variable Unit.
+
+ENDMODULE

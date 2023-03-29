@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SystemProperties>
+  <SystemName>120-101618</SystemName>
+  <SerialNo>120-101618</SerialNo>
+  <UsedMedia>
+    <Media path="RobotWare_6.14.1017" name="RobotWare" version="6.14.1017">
+    </Media>
+  </UsedMedia>
+  <ControlModule>
+    <Option descr="UDPUC Driver">
+    </Option>
+    <Option descr="English">
+    </Option>
+    <Option descr="687-1 Advanced Robot Motion">
+    </Option>
+    <Option descr="613-1 Collision Detection">
+    </Option>
+    <Option descr="709-1 DeviceNet Master/Slave">
+    </Option>
+    <Option descr="689-1 Externally Guided Motion (EGM)">
+    </Option>
+    <Option descr="617-1 FlexPendant Interface">
+    </Option>
+    <Option descr="614-1 FTP SFTP and NFS client">
+    </Option>
+    <Option descr="610-1 Independent Axis">
+    </Option>
+    <Option descr="623-1 Multitasking">
+    </Option>
+    <Option descr="612-1 Path Offset">
+    </Option>
+    <Option descr="611-1 Path Recovery">
+    </Option>
+    <Option descr="616-1 PC Interface">
+    </Option>
+    <Option descr="888-3 PROFINET Device">
+    </Option>
+    <Option descr="628-1 Sensor Interface">
+    </Option>
+    <Option descr="885-1 SoftMove">
+    </Option>
+    <Option descr="608-1 World Zones">
+    </Option>
+    <Option descr="RobotWare Base">
+    </Option>
+  </ControlModule>
+  <DriveModule>
+    <Name>Robot1</Name>
+    <Option descr="Axis Calibration">
+    </Option>
+    <Option descr="Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID">
+    </Option>
+    <Option descr="IRB 120-3/0.6">
+    </Option>
+  </DriveModule>
+</SystemProperties>
